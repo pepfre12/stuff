@@ -16,7 +16,7 @@ for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants
 player = game.Players.LocalPlayer
 cplayer = player.Character
 
-loadstring(game:HttpGet(('https://pastebin.com/raw/hM3vUYzT'),true))()
+loadstring(game:HttpGet(('https://pastebin.com/raw/e8cHWRcQ'),true))()
 
 for i,v in pairs (cplayer:GetChildren()) do
 	if v:IsA("Accessory") then
