@@ -5,44 +5,36 @@
 
 --Base Animaion by makhail07, attacks by KillerDarkness0105
 -------------------------------------------------------
-
-function Reanimate()
- game:GetService("Players").LocalPlayer.Character.Head.Anchored = true
- for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
-  if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then
-  game:GetService("RunService").Heartbeat:connect(function()
-  v.Velocity = Vector3.new(0,35,0)
-     wait(0.5)
+for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+    if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
+    game:GetService("RunService").Heartbeat:connect(function()
+    v.Velocity = Vector3.new(-30,0,0)
     end)
-   end
- end
- game.TestService.IsSleepAllowed = false
- for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
-	 if v:IsA("BasePart") then 
-		 game:GetService("RunService").Heartbeat:connect(function()
-			 v.Velocity = Vector3.new(-40,0,-10)
-			 pcall(function()
-				 v.CanCollide = false
-			 end)
-			 pcall(function()
-				 v.CanQuery = false
-			 end)
-		 end)
-	 end
- end
- --loadstring(game:HttpGet(("https://raw.githubusercontent.com/BloxinStud10/RNTE/main/Tool%20Fling%20Reanimate"),true))()
- loadstring(game:HttpGet(("https://raw.githubusercontent.com/BloxinStud10/RNTE/main/idk%20lol"),true))()
- local cplayer = game.Players.LocalPlayer.Character
- local function gp(parent, name, className)
-     if typeof(parent) == "Instance" then
-         for i, v in pairs(parent:GetChildren()) do
-             if (v.Name == name) and v:IsA(className) then
-                 return v
-             end
-         end
-     end
-     return nil
- end
+    end
+    end
+
+player = game.Players.LocalPlayer
+cplayer = player.Character
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/hM3vUYzT'),true))()
+
+for i,v in pairs (cplayer:GetChildren()) do
+	if v:IsA("Accessory") then
+		v.Handle.Massless = true
+		v.Handle.CustomPhysicalProperties = PhysicalProperties.new(0,0,0,0,0)
+	end
+end
+
+local function gp(parent, name, className)
+    if typeof(parent) == "Instance" then
+        for i, v in pairs(parent:GetChildren()) do
+            if (v.Name == name) and v:IsA(className) then
+                return v
+            end
+        end
+    end
+    return nil
+end
 
 local hat2 = gp(cplayer, "MeshPartAccessory", "Accessory")
 local handle2 = gp(hat2, "Handle", "BasePart")
@@ -79,11 +71,7 @@ local att2 = gp(handle2, "att1_Handle", "Attachment")
 att2.Parent = cplayer["Right Leg"]
 att2.Position = Vector3.new(0, -0.2, -0)
 att2.Rotation = Vector3.new(-90, 0, -90)
- 
- game:GetService("Players").LocalPlayer.Character.Head.Anchored = false
- setfpscap(120)
-end
-Reanimate() --Reanimate your character (idk why i did this lmao)
+setfpscap(120)
 
 coroutine.resume(coroutine.create(function()
 	while true do
